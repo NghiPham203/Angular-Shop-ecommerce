@@ -1,0 +1,149 @@
+  /* Tùy chỉnh kích thước logo */
+  .navbar-brand img {
+    max-height: 70px; /* Đặt chiều cao tối đa */
+    max-width: auto; /* Đặt chiều rộng tối đa */
+}
+.btn-outline-success:hover {
+    background-color: black; /* Đặt màu nền khi hover */
+    color: white; /* Đặt màu chữ khi hover */
+}
+.footer-logo{
+  max-height: 170px; /* Đặt chiều cao tối đa */
+    max-width: auto; /* Đặt chiều rộng tối đa */
+}
+
+.show-hover{
+display: none;
+}
+
+.hover-trigger:hover .show-hover{
+display: block;
+}
+
+.badge-top{
+width: 45px;
+position: absolute;
+top: 0;
+left: 20px;
+background: #C81E3A;
+color: #fff;
+font-weight: 900;
+text-align: center;
+padding: 13px 0;
+border-radius: 5px 5px 0 0;
+}
+
+/* after cho phép mình gắn thêm 1 cái j đó */
+
+.badge-top::after{
+content: "";
+display: block;
+border-width: 0 20px 15px;
+border-color: #ffff0000 #C81E3A;
+border-style: solid;
+bottom: -15px;
+left:0;
+position: absolute;
+width: 45px;
+
+}
+ /* Tùy chỉnh kích thước logo */
+ .navbar-brand img {
+    max-height: 70px; /* Đặt chiều cao tối đa */
+    max-width: auto; /* Đặt chiều rộng tối đa */
+}
+.btn-outline-success:hover {
+    background-color: black; /* Đặt màu nền khi hover */
+    color: white; /* Đặt màu chữ khi hover */
+}
+.footer-logo{
+  max-height: 170px; /* Đặt chiều cao tối đa */
+    max-width: auto; /* Đặt chiều rộng tối đa */
+}
+
+.show-hover{
+display: none;
+}
+
+.hover-trigger:hover .show-hover{
+display: block;
+}
+
+.badge-top{
+width: 45px;
+position: absolute;
+top: 0;
+left: 20px;
+background: #C81E3A;
+color: #fff;
+font-weight: 900;
+text-align: center;
+padding: 13px 0;
+border-radius: 5px 5px 0 0;
+}
+
+/* after cho phép mình gắn thêm 1 cái j đó */
+
+.badge-top::after{
+content: "";
+display: block;
+border-width: 0 20px 15px;
+border-color: #ffff0000 #C81E3A;
+border-style: solid;
+bottom: -15px;
+left:0;
+position: absolute;
+width: 45px;
+
+}
+.navbar-brand img {
+    max-height: 70px; /* Đặt chiều cao tối đa */
+    max-width: auto; /* Đặt chiều rộng tối đa */
+}
+.btn-outline-success:hover {
+    background-color: black; /* Đặt màu nền khi hover */
+    color: white; /* Đặt màu chữ khi hover */
+}
+.footer-logo{
+  max-height: 170px; /* Đặt chiều cao tối đa */
+    max-width: auto; /* Đặt chiều rộng tối đa */
+}
+
+.show-hover{
+display: none;
+}
+
+.hover-trigger:hover .show-hover{
+display: block;
+}
+
+.badge-top{
+width: 45px;
+position: absolute;
+top: 0;
+left: 20px;
+background: #C81E3A;
+color: #fff;
+font-weight: 900;
+text-align: center;
+padding: 13px 0;
+border-radius: 5px 5px 0 0;
+}
+
+/* after cho phép mình gắn thêm 1 cái j đó */
+
+.badge-top::after{
+content: "";
+display: block;
+border-width: 0 20px 15px;
+border-color: #ffff0000 #C81E3A;
+border-style: solid;
+bottom: -15px;
+left:0;
+position: absolute;
+width: 45px;
+
+}
+.btn-primary:hover {
+background-color: black; /* Đổi màu nền khi hover sang màu đen */
+}

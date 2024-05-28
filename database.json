@@ -1,0 +1,72 @@
+{
+  "sanpham": [
+    {
+      "id": "6",
+      "category": "Jacket",
+      "name": "Summer Jacket",
+      "price": 327,
+      "img": "ao8.webp"
+    },
+    {
+      "id": "7",
+      "category": "Pant",
+      "name": "Royal Pant",
+      "price": 89,
+      "img": "quan1.webp"
+    },
+    {
+      "id": "8",
+      "category": "Pant",
+      "name": "Biker's Pant",
+      "price": 111,
+      "img": "ao5.webp"
+    },
+    {
+      "id": "9",
+      "category": "Hoodie",
+      "name": "Winter Hoodie",
+      "price": 71,
+      "img": "ao6.webp"
+    },
+    {
+      "id": "10",
+      "category": "Hoodie",
+      "name": "Summer time Hoodie",
+      "price": 120,
+      "img": "ao7.webp"
+    }
+  ],
+  "user": [
+    {
+      "id": "1",
+      "name": "Nghi Pham",
+      "email": "phamhuunghi1412@gmail.com",
+      "password": "11223344",
+      "role": "1"
+    },
+    {
+      "id": "2",
+      "name": "Khanh",
+      "email": "khanh@gmail.com",
+      "password": "1122",
+      "role": "0"
+    },
+    {
+      "id": "3",
+      "name": "Nghi Pham",
+      "email": "Huynh Kha",
+      "password": "11111",
+      "role": "0"
+    },
+    {
+      "id": "b525",
+      "name": "Phạm Hữu Nghị",
+      "email": "phamhuunghi1412@gmail.com"
+    },
+    {
+      "id": "6bed",
+      "name": "Phạm Hữu Nghị",
+      "email": "phamhuunghi1412@gmail.com"
+    }
+  ]
+}

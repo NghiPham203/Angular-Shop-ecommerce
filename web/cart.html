@@ -1,0 +1,39 @@
+<div class="container">
+
+
+<table class="table">
+<thead>
+  <tr>
+    <th scope="col">STT</th>
+    <th scope="col">Name</th>
+    <th scope="col">Price</th>
+    <th scope="col">Quantity</th>
+    <th scope="col">Total</th>
+  </tr>
+</thead>
+<tbody>
+  <tr ng-repeat="sp in cart">
+    <th scope="row">{{$index+1}}</th>
+    <td>
+      <img src="/images/{{sp.img}}" style="width: 30px; border-radius: 50%; border: none;">
+      {{sp.name}}</td>
+    <td>{{sp.price|number:0}}$</td>
+    <td>
+      <input type="number" class="form-control" style="width: 80px;" ng-model="sp.quantity" ng-change="saveCart()" min="1">
+    </td>
+    <td>{{sp.price*sp.quantity|number:0}}$</td>
+    <td><button class="btn" ng-click="delete($index)"><i class="fa-solid fa-trash"></i></button></td>
+  </tr> 
+</tbody>
+<tfoot>
+  <tr>
+    <th colspan="4">Sub total</th>
+    <th>{{tinhTong()|number:0}}$</th>
+    <th>
+      <button class="btn-sm btn-outline-danger" ng-click="deleteAll()"><i style="color: red;" class="fa-solid fa-trash"></i> </button>
+    </th>
+  </tr>
+</tfoot>
+</table>
+
+</div>

@@ -1,0 +1,165 @@
+<div class="container">
+    <div class="row">
+      <div id="productList">
+        <table class="table table-bordered">
+          <thead>
+            <!-- Button to open create product modal -->
+<button class="btn-add" data-bs-toggle="modal" data-bs-target="#createProductModal">Thêm</button>
+
+<!-- Modal for creating new product -->
+<div class="modal" id="createProductModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Thêm sản phẩm mới</h4>
+        <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+      </div>
+      
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form name="createForm" ng-submit="addProduct(); $event.preventDefault()">
+          <input type="text" placeholder="Tên sản phẩm" ng-model="product.name" required />
+          <br />
+          <div style="color: red" ng-if="createForm.$submitted && createForm.$invalid">
+            Vui lòng nhập Tên sản phẩm
+          </div>
+          
+          <input type="text" placeholder="Giá sản phẩm" ng-model="product.price" required />
+          <br />
+          <div style="color: red" ng-if="createForm.$submitted && createForm.$invalid">
+            Vui lòng nhập Giá sản phẩm
+          </div>
+          
+          <input type="submit" value="Them" ng-click="addProduct()">
+        </form>
+      </div>
+      
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+            <tr>
+              <th>Tên</th>
+              <th>Giá</th>
+              <th>Hình ảnh</th>
+              <th>Hành động</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="product in products ">
+              <td>{{ product.name }}</td>
+              <td>{{ product.price|number:0 }}$</td>
+              <td>
+                <img
+                  src="/images/{{product.img}}"
+                  alt="{{ product.name }}"
+                  style="width: 50px; height: 50px;border-radius: 50%;"
+                />
+              </td>
+              <td>
+                <button
+                  class="btn btn-primary"
+                  ng-click="editProduct(product)"
+                  data-bs-toggle="modal"
+                  data-bs-target="#myModal"
+                >
+                  Sửa
+                </button>
+                <a
+                  class="btn btn-danger"
+                  ng-click="deleteProduct(product.id)"
+                  >Xóa</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+  
+        <!-- Pagination -->
+        <ul class="pagination justify-content-center">
+          <li class="page-item" ng-class="{disabled: currentPage === 1}">
+            <a class="page-link" href="#" ng-click="prevPage()">Quay lại</a>
+          </li>
+          <li
+            class="page-item"
+            ng-repeat="n in [].constructor(totalPages) track by $index"
+            ng-class="{active: currentPage === ($index + 1)}"
+          >
+            <a
+              class="page-link"
+              href="#"
+              ng-click="setPage($index + 1); $event.preventDefault();"
+              >{{ $index + 1 }}</a
+            >
+          </li>
+          <li class="page-item" ng-class="{disabled: currentPage === totalPages}">
+            <a class="page-link" href="#" ng-click="nextPage()">Tiếp theo</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Sửa sản phẩm</h4>
+          <button type="button" class="close" data-bs-dismiss="modal">
+            &times;
+          </button>
+        </div>
+  
+        <!-- Modal body -->
+       <!-- Modal body -->
+<div class="modal-body">
+  <form name="editForm" ng-submit="updateProduct(); $event.preventDefault()">
+    <input
+      type="text"
+      placeholder="Nhập Tên sản phẩm"
+      ng-model="editedProduct.name"
+      name="editedProductName"
+      required
+    />
+    <br />
+    <div
+      style="color: red"
+      ng-if="editForm.editedProductName.$invalid && editForm.editedProductName.$touched"
+    >
+      Vui lòng nhập Tên sản phẩm
+    </div>
+    
+    <input
+      type="text"
+      placeholder="Nhập Giá sản phẩm"
+      ng-model="editedProduct.price"
+      name="editedProductPrice"
+      required
+    />
+    <br />
+    <div
+      style="color: red"
+      ng-if="editForm.editedProductPrice.$invalid && editForm.editedProductPrice.$touched"
+    >
+      Vui lòng nhập Giá sản phẩm
+    </div>
+    <button type="submit">Cập nhật</button>
+  </form>
+</div>
+
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>

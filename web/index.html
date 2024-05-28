@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en"  >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css"> 
+    <link rel="stylesheet" href="/css/style.css">
+   
+   
+</head>
+<body ng-app="myApp" ng-controller="mainController">
+  
+      <!-- Header -->
+    <div class="container">
+        <div class="row">
+             <nav class="navbar navbar-expand-lg navbar-dark " style="min-height:70px">
+            <div class="container-fluid">
+                <button class="navbar-toggler bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+              <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavDropdown">
+                <ul class="navbar-nav"> 
+                    <li class="nav-item">
+                    <a class="navbar-brand" href="#!/index.html"><img src="/images/logo.png"></a> <!-- Sử dụng class navbar-brand của Bootstrap -->
+                  </li>
+                 
+                </ul>
+                <ul class="navbar-nav ">
+                  <li class="nav-item m-auto">
+                    <a class="nav-link active text-black" aria-current="page" href="#">Trang chủ</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-black " href="#"> Giới thiệu</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-black" href="#">Liên hệ</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-black" href="#">Góp ý</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-black" href="#">Hỏi đáp</a>
+                  </li>
+                  <li class="nav-item" ng-show="!user">
+                    <a class="nav-link text-black" href="#!login">Đăng Nhập</a>
+                  </li>
+                  <li class="nav-item" ng-show="user">
+                    <a class="nav-link text-black" href="#!login">Xin chào,{{user.name}}</a>
+                  </li>
+                  <li class="nav-item" ng-show="user">
+                    <a class="nav-link text-black" href="javascript:void(0)" ng-click="logout()">Đăng xuất</a>
+                  </li>
+
+                  
+
+                  
+                  <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                     Tài Khoản
+                    </a>
+                    <ul class="dropdown-menu ">
+                      <li><a class="dropdown-item text-black" href="#!login">Đăng nhập</a></li>
+                      <li><a class="dropdown-item text-black" href="#">Đăng ký</a></li>
+                      <li><a class="dropdown-item text-black" href="#">Quên mật khẩu</a></li>
+                    </ul>
+                  </li> -->
+                 
+                 
+                 
+                 
+                </ul>
+                <ul class="navbar-nav "> 
+                 <a href="#!cart" style="color: black;"><i class="fa-solid fa-cart-shopping"></i></a> 
+                
+              </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+    </div>
+        <!-- Header -->
+  <div ng-view>
+
+  </div>
+<!-- footer -->
+<div class="container">
+  <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+    <div class="col mb-3">
+      <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+      <img class="footer-logo" src="/images/logo.png" alt="">
+    </div>
+
+    <div class="col mb-3">
+
+    </div>
+
+    <div class="col mb-3">
+      <h5>Section</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+      </ul>
+    </div>
+
+    <div class="col mb-3">
+      <h5>Section</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+      </ul>
+    </div>
+
+    <div class="col mb-3">
+      <h5>Section</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+      </ul>
+    </div>
+  </footer>
+</div>
+
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/index.js"></script>
+<script src="js/home.js"></script>
+<script src="js/chitiet.js"></script>
+<script src="js/login.js"></script>
+<script src="js/signin.js"></script>
+<script src="js/mainController.js"></script>
+<script src="js/cartController.js"></script>
+<script src="js/admin.js"></script>
+
